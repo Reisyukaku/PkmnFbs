@@ -1,0 +1,10 @@
+table ComponentEntry{
+    Type:string;
+    FileName:string;
+}
+
+table AnimComponentNames{
+    Components:[ComponentEntry];
+}
+
+root_type AnimComponentNames;

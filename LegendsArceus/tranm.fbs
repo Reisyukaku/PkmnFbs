@@ -1,0 +1,67 @@
+enum VectorTrack : byte {
+    NONE = 0,
+    FixedVectorTrack = 1,
+    DynamicVectorTrack = 2,
+    FramedVectorTrack = 3,
+    UnkVectorTrack = 4,
+}
+
+enum QuatTrack : byte {
+    NONE = 0,
+    FixedQuatTrack = 1,
+    DynamicQuatTrack = 2,
+    FramedQuatTrack = 3,
+    UnkQuatTrack = 4,
+}
+
+struct Vec4i {
+    X:ushort;
+    Y:ushort;
+    Z:ushort;
+    W:ushort;
+}
+
+struct Vec3f {
+    X:float;
+    Y:float;
+    Z:float;
+}
+
+table ScaleV3 {
+    Vec3:Vec3f;
+}
+
+table RotV3 {
+    Vec3:Vec4i;
+}
+
+table TransV3 {
+    Vec3:Vec3f;
+}
+
+table Bone {
+    Name:string;
+    ScaleType:VectorTrack;
+    Scale:ScaleV3;
+    RotType:QuatTrack;
+    Rotation:RotV3;
+    TransType:VectorTrack;
+    translation:TransV3;
+}
+
+table SkelAnim {
+    Bones:[Bone];
+}
+
+table Metadata {
+    unk1:uint;
+    Keyframes:uint;
+    FPS:uint;
+}
+
+table TranM {
+    Meta:Metadata;
+    Anim:SkelAnim;
+}
+
+root_type TranM;

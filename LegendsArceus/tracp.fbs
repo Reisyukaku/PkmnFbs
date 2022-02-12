@@ -1,0 +1,34 @@
+table IntEntry {
+    Name:string;
+    Val1:int;
+    Val2:int;
+    Val3:int;
+}
+
+table FloatEntry {
+    Name:string;
+    Val1:float;
+    Val2:float;
+}
+
+table BoolEntry {
+    Name:string;
+    Val:bool;
+}
+
+table TriggerEntry {
+    Name:string;
+}
+
+table ParameterTbl {
+    Ints:[IntEntry];
+    Floats:[FloatEntry];
+    Bools:[BoolEntry];
+    Triggers:[TriggerEntry];
+}
+
+table AnimParameters {
+    Parameters:ParameterTbl;
+}
+
+root_type AnimParameters;

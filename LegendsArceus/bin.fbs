@@ -1,0 +1,61 @@
+struct Vec3f {
+    X:float;
+    Y:float;
+    Z:float;
+}
+
+struct Vec4f {
+    X:float;
+    Y:float;
+    Z:float;
+    W:float;
+}
+
+table Vec2 {
+    unk1:uint;
+    unk2:uint;
+    unk3:uint;
+    name:string;
+    unk4:uint;
+}
+
+table Vec4i {
+    X:uint;
+    Y:uint;
+    Z:uint;
+    W:uint;
+}
+
+table Vec1 {
+    vec4i:[Vec4i];
+    unk2:uint;
+}
+
+table VecTbl {
+    vec1:Vec3f;
+    vec2:Vec3f;
+}
+
+table Entry {
+    name:string;
+    vecs:VecTbl;
+    unk2:uint;
+    unk3:[Vec1];
+    unk4:[Vec2];
+    unk5:uint;
+    unk6:uint;
+    unk7:uint;
+    unk8:uint;
+    unkV4f:Vec4f;
+    unk10:uint;
+    unk11:uint;
+    unk12:uint;
+}
+
+table UnkBin {
+    unk0:uint;
+    entries:[Entry];
+    File:string;
+}
+
+root_type UnkBin;

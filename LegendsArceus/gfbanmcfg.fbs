@@ -1,0 +1,29 @@
+table Unk {
+    v1:int;
+}
+
+table Unk3 {
+    unk:[Unk];
+    name:string;
+}
+
+table Unk4 {
+    unk1:float;
+    unk2:float;
+}
+
+table File {
+    fileName:string;
+}
+
+table GfBinAnimCfg {
+    unk:int;
+    meshes:[File];
+    unk2:int;
+    mats:[string];
+    unk3:[Unk3];
+    unk4:Unk4;
+    unk5:float;
+}
+
+root_type GfBinAnimCfg;

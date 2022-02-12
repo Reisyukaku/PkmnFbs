@@ -1,0 +1,26 @@
+table File {
+    fileName:string;
+}
+
+table Info {
+    nmFile:File;
+    unk1:short;
+    efFile:File;
+}
+
+table Entry {
+    animName:string;
+    unk1:short;
+    unk2:short;
+    info:Info;
+}
+
+table Anims {
+    entries:[Entry];
+}
+
+table ModelAnim {
+    anims:Anims;
+}
+
+root_type ModelAnim;

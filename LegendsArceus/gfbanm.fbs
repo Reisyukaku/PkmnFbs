@@ -1,0 +1,109 @@
+table Unk15 {
+
+}
+
+table Unk14 {
+
+}
+
+table Unk13 {
+
+}
+
+table Unk12 {
+
+}
+
+table Unk11 {
+
+}
+
+table Unk10 {
+
+}
+
+table IntProperty {
+    name:string;
+    value:uint;
+}
+
+table Unk8 {
+
+}
+
+table Unk7 {
+    test:string;
+    unk:float;
+}
+
+table Unk6 {
+
+}
+
+table Unk5 {
+
+}
+
+table ShaderProperty {
+    name:string;
+    value:float;
+}
+
+table Unk3 {
+    unk1:uint;
+    unk2:uint;
+    unk3:uint;
+    unk4:uint;
+    unk5:uint;
+    unk6:uint;
+    unk7:uint;
+    unk8:uint;
+    unk9:uint;
+    unk10:uint;
+    unk11:uint;
+    unk12:uint;
+    unk13:float;
+}
+
+table Material {
+    property:string;
+    texture:string;
+    value:uint;
+}
+
+table BoolProperty {
+    name:string;
+    value:string;
+}
+
+table Unk1 {
+    vec1:[uint];
+    properties:[BoolProperty];
+}
+
+table Entry {
+    fileName:string;
+    unk1:[Unk1];
+    materials:[Material];
+    unk3:[Unk3];
+    shaderProperties:[ShaderProperty];
+    unk5:[Unk5];
+    unk6:[Unk6];
+    unk7:[Unk7];
+    unk8:[Unk8];
+    unk9:[IntProperty];
+    unk10:[Unk10];
+    unk11:[Unk11];
+    unk12:[Unk12];
+    unk13:uint;
+    unk14:uint;
+    unk15:string;
+}
+
+table GfBinAnim {
+    unk:int;
+    entries:[Entry];
+    unk1:[Unk1];
+}
+
+root_type GfBinAnim;
