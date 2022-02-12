@@ -1,0 +1,45 @@
+namespace SwSh;
+
+table Mesh {
+    Name:string;
+}
+
+table UnkTable2 {
+    unk0:uint32;
+    unk1:uint32;
+}
+
+table PokeGConfig {
+    unk:int;
+    unk2:int;
+    DexNum:ushort;
+    unk4:ushort;
+    unk5:float;
+    unk6:int;
+    unk7:float;
+    unk8:byte;
+    unk9:float;
+    unk10:float;
+    unk12:float;
+    unk13:float;
+    unk14:float;
+    unk15:float;
+    unk16:float;
+    unk17:float;
+    unk18:float;
+    unk19:float;
+    unk20:float;
+    unk21:float;
+    unk22:float;
+    unk23:float;
+    unk24:float;
+    unk25:float;
+    unk26:float;
+    unk27:float;
+    unk28:float;
+    unk29:float;
+    Meshes:[Mesh];
+    unk31:UnkTable2;
+}
+
+root_type PokeGConfig;

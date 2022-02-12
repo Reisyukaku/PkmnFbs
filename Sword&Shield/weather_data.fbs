@@ -1,0 +1,62 @@
+namespace SwSh;
+
+file_extension "bin";
+
+table FloatTable {
+    unk0:float;
+    unk1:float;
+    unk2:float;
+    unk3:float;
+    unk4:float;
+}
+
+table unkTable {
+    unk0:[float];
+    unk1:[float];
+    unk2:[float];
+    unk3:[float];
+}
+
+table unkTable2 {
+    unk0:uint32;
+    unk1:float;
+    unk2:float;
+    unk3:float;
+    unk4:float;
+    unk5:[float];
+    unk6:[float];
+    unk7:[float];
+}
+
+table Entry {
+    ID:byte;
+    ParticleFiles:[string];
+    unk2:uint32;
+    unk3:uint32;
+    unk4:uint32;
+    unk5:uint32;
+    unk6:uint32;
+    unk7:uint32;
+    unk8:uint32;
+    unk9:uint32;
+    unk10:float;
+    unk11:FloatTable;
+    unk12:[float];
+    unk13:[float];
+    unk14:unkTable;
+    unk15:unkTable;
+    unk16:FloatTable;
+    unk17:float;
+    unk18:float;
+    unk19:float;
+    unk20:[float];
+    unk21:[float];
+    unk22:[unkTable2];
+    unk23:byte;
+}
+
+table Weather {
+    Entries:[Entry];
+}
+
+root_type Weather;

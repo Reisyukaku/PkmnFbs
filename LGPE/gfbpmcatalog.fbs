@@ -1,0 +1,25 @@
+namespace LGPE;
+
+enum Gend : byte {Male = 0, Female =  1}
+
+table Anim {
+    Name:string;
+    Path:string;
+}
+
+table Pkmn {
+    Species:ushort = 0;
+    AltForm:ushort = 0; 
+    Gender:Gend = Male;
+    Shiny:bool = false;
+    ModelPath:string;
+    ConfigPath:string;
+    ArchivePath:string;
+    Animations:[Anim];
+}
+
+table Catalog {
+    Pokemon:[Pkmn];
+}
+
+root_type Catalog;
