@@ -1,3 +1,5 @@
+file_extension "tracn";
+
 table ComponentEntry{
     Type:string;
     FileName:string;

@@ -1,3 +1,5 @@
+file_extension "trpokecfg";
+
 table PokemonConfig {
     Unk:byte;
     unk1:float;

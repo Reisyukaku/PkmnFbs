@@ -1,3 +1,5 @@
+file_extension "tranm";
+
 enum VectorTrack : byte {
     NONE = 0,
     FixedVectorTrack = 1,

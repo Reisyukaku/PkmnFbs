@@ -1,3 +1,5 @@
+file_extension "tracp";
+
 table IntEntry {
     Name:string;
     Val1:int;

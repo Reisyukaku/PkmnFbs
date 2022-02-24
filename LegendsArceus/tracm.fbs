@@ -1,3 +1,5 @@
+file_extension "tracm";
+
 table SomeTable {
     v1:float;
     v2:float;

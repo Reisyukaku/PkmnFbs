@@ -1,3 +1,5 @@
+file_extension "gfbanmcfg";
+
 table Unk {
     v1:int;
 }

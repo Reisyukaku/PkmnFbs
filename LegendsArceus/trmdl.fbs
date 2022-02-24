@@ -1,3 +1,5 @@
+file_extension "trmdl";
+
 struct Vec4f {
 	X:float;
 	Y:float;

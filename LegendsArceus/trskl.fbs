@@ -1,3 +1,5 @@
+file_extension "trskl";
+
 struct Vec3f {
     X:float;
     Y:float;

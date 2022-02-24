@@ -1,3 +1,5 @@
+file_extension "bin";
+
 struct Vec2f {
     X:float;
     Y:float;
