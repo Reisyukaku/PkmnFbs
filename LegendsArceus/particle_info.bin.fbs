@@ -1,0 +1,30 @@
+struct Vec2f {
+    X:float;
+    Y:float;
+}
+
+struct UnkStrct {
+    u1:uint;
+    u2:uint;
+    u3:uint;
+    u4:ushort;
+}
+
+table Test {
+    unk1:uint64;
+    unk2:uint64;
+    unk3:uint64;
+    unk4:uint64;
+    unk5:UnkStrct;
+}
+
+table Particle {
+    Location:Vec2f;
+    unk:[Test];
+}
+
+table particle_info {
+    Particles:[Particle];
+}
+
+root_type particle_info;

@@ -1,0 +1,46 @@
+struct Vec4f {
+	X:float;
+	Y:float;
+	Z:float;
+	W:float;
+}
+
+struct Vec3f {
+	X:float;
+	Y:float;
+	Z:float;
+}
+
+table UnkTbl {
+	vec1:Vec3f;
+	vec2:Vec3f;
+}
+
+table LODIndex {
+	unk1:uint;
+}
+
+table LOD {
+	Index:[LODIndex];
+	LODType:string;
+}
+
+table Skel {
+	File:string;
+}
+
+table Mesh {
+	File:string;
+}
+
+table Model {
+	Unk1:uint;
+	Meshes:[Mesh];
+	Skeleton:Skel;
+	Materials:[string];
+	LODs:[LOD];
+	unk2:UnkTbl;
+	vec:Vec4f;
+}
+
+root_type Model;

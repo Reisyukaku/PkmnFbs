@@ -1,0 +1,48 @@
+
+table GroupConfig {
+	Class:string;
+	unk2:uint;
+}
+
+table ActionRef {
+	ActionName:string;
+}
+
+table ActionGroupMember {
+	Action:ActionRef;
+	Speed:float;
+}
+
+table FileRef {
+	FileName:string;
+}
+
+table ResourceMap {
+	Motion:FileRef;
+	Collision:FileRef;
+	Effect:FileRef;
+}
+
+table ActionGroup {
+	Name:string;
+	Config:GroupConfig;
+	Members:[ActionGroupMember];
+}
+
+table Action {
+	Name:string;
+	unk1:uint;
+	unk2:uint;
+	Resources:ResourceMap;
+}
+
+table AnimResourceEntries {
+	Actions:[Action];
+	Groups:[ActionGroup];
+}
+
+table AnimResources {
+	Entries:AnimResourceEntries;
+}
+
+root_type AnimResources;

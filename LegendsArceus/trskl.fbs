@@ -4,6 +4,36 @@ struct Vec3f {
     Z:float;
 }
 
+struct Vec4f {
+    X:float;
+    Y:float;
+    Z:float;
+    W:float
+}
+
+table UnkTbl {
+	unk1:Vec3f;
+	unk2:Vec3f;
+	unk3:Vec3f;
+	unk4:Vec3f;
+}
+
+table Unk1 {
+	unk1:ubyte;
+	unk2:ubyte;
+	unk3:UnkTbl;
+}
+
+table Unk2 {
+    RollBoneName:string;
+	ExBoneName:string;
+	MainBoneName:string;
+	ModifierType:string;
+	unk1:uint;
+	unk2:Vec3f;
+	unk3:Vec4f;
+}
+
 table TransformTbl {
     Vec1:Vec3f;
     Vec2:Vec3f;
@@ -23,8 +53,8 @@ table Effect {
 table SkeletalLocator {
     unk:uint;
     Effects:[Effect];
-    unk1:uint;
-    unk2:uint;
+    unk1:[Unk1];
+    unk2:[Unk2];
 }
 
 root_type SkeletalLocator;
