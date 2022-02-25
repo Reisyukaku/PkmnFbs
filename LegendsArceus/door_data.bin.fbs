@@ -1,0 +1,75 @@
+file_extension "bin";
+
+struct UnkStrct {
+    U1:float;
+    U2:byte;
+    U3:byte;
+}
+
+table UnusedTbl {
+    
+}
+
+table Vec3fTbl {
+    X:float;
+    Y:float;
+    Z:float;
+}
+
+table WarpTable {
+    UnkHash1:uint64;
+    UnkHash2:uint64;
+    UnkName:string;
+    Unused2:UnusedTbl;
+    Unused3:UnusedTbl;
+    Unused4:UnusedTbl;
+    Unused5:UnusedTbl;
+    Position:Vec3fTbl;
+    Rotation:Vec3fTbl;
+    Scale:Vec3fTbl;
+}
+
+table SomeTbl {
+    unk1:float;
+    unk2:UnkStrct;
+}
+
+table Door {
+    DoorName:string;
+    Hash1:uint64;
+    AreaName:string;
+    WarpName:string;
+    Hash2:uint64;
+    Hash3:uint64;
+    OpenAnim:string;
+    CloseAnim:string;
+    unk2:Vec3fTbl;
+    unk3:float;
+    unk4:SomeTbl;
+    unk5:byte;
+    unk6:Vec3fTbl;
+    unk7:UnusedTbl;
+    unk8:uint64;
+    unk9:uint;
+    unk10:float;
+    unk11:Vec3fTbl;
+    unk12:SomeTbl;
+    unk13:float;
+    unk14:uint;
+    unk15:uint;
+    unk16:uint64;
+    Warp:[WarpTable];
+    unk18:uint64;
+    unk19:UnusedTbl;
+    unk20:uint;
+    unk21:uint;
+    unk22:float;
+    unk23:float;
+    unk24:float;
+}
+
+table door_data {
+    Doors:[Door];
+}
+
+root_type door_data;
