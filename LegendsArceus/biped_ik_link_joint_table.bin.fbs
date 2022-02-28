@@ -1,0 +1,20 @@
+file_extension "bin";
+
+struct UnkStrct {
+    unk1:uint64;
+    unk2:uint;
+}
+
+table LinkJoint {
+    unk1:uint64;
+    unk2:UnkStrct;
+    unk3:string;
+    unk4:string;
+    unk5:float;
+}
+
+table BipedIKLinkJoints {
+    LinkJoints:[LinkJoint];
+}
+
+root_type BipedIKLinkJoints;

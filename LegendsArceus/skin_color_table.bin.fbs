@@ -1,0 +1,14 @@
+file_extension "bin";
+
+table SkinColor {
+    Hash:uint64;
+    R:uint;
+    G:uint;
+    B:uint;
+}
+
+table SkinColorTable {
+    SkinColors:[SkinColor];
+}
+
+root_type SkinColorTable;

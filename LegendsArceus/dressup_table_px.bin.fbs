@@ -1,0 +1,67 @@
+file_extension "bin";
+
+table UnusedVec {
+
+}
+
+table Entry {
+    Name:string;
+    Unused0:[UnusedVec];
+    Unused1:[UnusedVec];
+    unk3:uint64;
+    Unused2:[UnusedVec];
+    unk5:uint64;
+    Unused3:[UnusedVec];
+    unk7:uint;
+    unk8:uint;
+    unk9:uint64;
+    Unused4:[UnusedVec];
+    unk11:uint;
+    unk12:uint;
+    unk13:uint;
+    unk14:uint;
+    Unused5:[UnusedVec];
+    unk16:uint;
+    unk17:uint;
+    unk18:uint;
+    unk19:uint;
+    Unused6:[UnusedVec];
+    unk21:uint;
+    unk22:uint;
+    unk23:uint;
+    unk24:uint;
+    Hash1:uint64;
+    Hash2:uint64;
+    Hair:string;
+    Face:string;
+    Eyes:string;
+    FaceWear:string;
+    Hat:string;
+    Shirt:string;
+    Pants:string;
+    Outfit:string;
+    Shoes:string;
+    Bag:string;
+    unk37:string;
+    unk38:uint;
+    PartName:string;
+    Arg1:string;
+    Arg2:string;
+    Arg3:string;
+    Arg4:string;
+    Arg5:string;
+    unk45:string;
+    DataName:string;
+    DataPath:string;
+    MotionName:string;
+    MotionPath:string;
+    unk50:uint;
+    unk51:uint;
+    unk52:string;
+}
+
+table DressupTableP1 {
+    Entries:[Entry];
+}
+
+root_type DressupTableP1;
