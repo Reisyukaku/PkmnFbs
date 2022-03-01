@@ -1,35 +1,31 @@
 file_extension "bin";
 
-table UnusedVec {
-
-}
-
 table Entry {
     Name:string;
-    Unused0:[UnusedVec];
-    Unused1:[UnusedVec];
+    Unused0:string;
+    Unused1:string;
     unk3:uint64;
-    Unused2:[UnusedVec];
+    Unused2:string;
     unk5:uint64;
-    Unused3:[UnusedVec];
+    Unused3:string;
     unk7:uint;
     unk8:uint;
     unk9:uint64;
-    Unused4:[UnusedVec];
-    unk11:uint;
-    unk12:uint;
-    unk13:uint;
-    unk14:uint;
-    Unused5:[UnusedVec];
-    unk16:uint;
-    unk17:uint;
-    unk18:uint;
-    unk19:uint;
-    Unused6:[UnusedVec];
-    unk21:uint;
-    unk22:uint;
-    unk23:uint;
-    unk24:uint;
+    Unused4:string;
+    R:uint;
+    G:uint;
+    B:uint;
+    A:uint;
+    Unused5:string;
+    R2:uint;
+    G2:uint;
+    B2:uint;
+    A2:uint;
+    Unused6:string;
+    R3:uint;
+    G3:uint;
+    B3:uint;
+    A3:uint;
     Hash1:uint64;
     Hash2:uint64;
     Hair:string;
@@ -58,6 +54,7 @@ table Entry {
     unk50:uint;
     unk51:uint;
     unk52:string;
+    unk53:uint;
 }
 
 table DressupTableP1 {
