@@ -1,0 +1,15 @@
+table Entry {
+    Name:string;
+    Hash:uint64;
+    unk1:uint;
+    Val1:string;
+    Val2:string;
+    Args:[string];
+    unk2:uint;
+}
+
+table PlayerConfig {
+    ConfigEntries:[Entry];
+}
+
+root_type PlayerConfig;
