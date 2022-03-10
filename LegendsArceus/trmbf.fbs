@@ -1,0 +1,19 @@
+table Verticies {
+	Buffer:[uint8];
+}
+
+table Indices {
+	Buffer:[uint8];
+}
+
+table Polygon {
+	IndexBuf:[Indices];
+	VertBuf:[Verticies];
+}
+
+table Trmbf {
+	unused:uint;
+	Polygons:[Polygon];
+}
+
+root_type Trmbf;

@@ -10,7 +10,7 @@ struct Vec4f {
     X:float;
     Y:float;
     Z:float;
-    W:float
+    W:float;
 }
 
 table UnkTbl {

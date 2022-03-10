@@ -1,0 +1,19 @@
+table Shape {
+	Name:string;
+	unk:uint8;
+}
+
+table Entry {
+	MaterialTypeName:string;
+	MaterialFiles:[string];
+	Shapes:[Shape];
+	unk4:uint;
+}
+
+table Trmmt {
+	unk0:uint;
+	unk1:uint;
+	Entries:[Entry];
+}
+
+root_type Trmmt;
