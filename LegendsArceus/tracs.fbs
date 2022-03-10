@@ -1,0 +1,100 @@
+
+enum ConditionType : uint {
+    Less = 0,
+    L_Equal,
+    Greater,
+    G_Equal,
+    Equal,
+    N_Equal,
+}
+
+enum StateType : uint {
+    Normal = 0,
+    Entry,
+    Exit,
+    Any,
+    Top,
+}
+
+union ConditionValue {
+    ConditionValue_Int, 
+    ConditionValue_Float, 
+    ConditionValue_Bool, 
+    ConditionValue_Trigger
+}
+
+table ConditionValue_Int {
+    Value:uint;
+}
+
+table ConditionValue_Float {
+    Value:float;
+}
+
+table ConditionValue_Bool {
+    Value:int8;
+}
+
+table ConditionValue_Trigger {
+    Value:uint8;
+}
+
+table ResourceLabel {
+    resource_name: string;
+    resource_type: uint;
+}
+
+table SourceTbl {
+    label: ResourceLabel;
+    unk_1: float;
+    res_2: uint = 0x0;
+    unk_3: float;
+    res_4: uint = 0x0;
+    unk_5: float;
+    res_6: uint = 0x0;
+    unk_7: float;
+    res_8: uint;
+}
+
+table Condition {
+    Name: string;
+    Func: ConditionType;
+    Value: ConditionValue;
+}
+
+table Transition {
+    path: string;
+    unk_1: uint;
+    exit_time: float;
+    duration: float;
+    offset: float;
+    unk_5: uint;
+    conditions: [Condition];
+    unk_7: uint;
+}
+
+table State {
+    Path:string;
+    Type:StateType;
+    Tag:string;
+    Source:SourceTbl;
+    Transitions:[Transition];
+    States:[State];
+    unk:[uint];
+}
+
+table TopState {
+    Name: string;
+    Payload: State;
+}
+
+table ChannelStates {
+    StateMachines:[TopState];
+}
+
+
+table TraCS {
+    States:ChannelStates;
+}
+
+root_type TraCS;

@@ -1,0 +1,92 @@
+struct Vec4f {
+	X:float;
+	Y:float;
+	Z:float;
+	W:float;
+}
+
+enum UVWrapMode: uint32 {
+  WRAP = 0,
+  CLAMP = 1,
+  MIRROR = 2,
+  BORDER = 3,
+  MIRROR_ONCE = 4,
+}
+
+table unk9_table {
+	unk1:uint;
+}
+
+table IntUniform {
+	Name:string;
+	Value:int;
+}
+
+table ColorUniform {
+	Name:string;
+	Value:Vec4f;
+}
+
+table FloatUniform {
+	Name:string;
+	Value:float;
+}
+
+table SamplerState {
+	SamplerState_0:uint;
+	SamplerState_1:uint;
+	SamplerState_2:uint;
+	SamplerState_3:uint;
+	SamplerState_4:uint;
+	SamplerState_5:uint;
+	SamplerState_6:uint;
+	SamplerState_7:uint;
+	SamplerState_8:uint;
+	RepeatU:UVWrapMode;
+	RepeatV:UVWrapMode;
+	Repeat2:UVWrapMode;
+	BorderColor:Vec4f;
+	MipMapBias:float;
+}
+
+table Texture {
+	Name:string;
+	File:string;
+	TextureUnit:uint;
+}
+
+table ShaderParam {
+	Name:string;
+	Value:string;
+}
+
+table Shader {
+	Name:string;
+	Parameters:[ShaderParam];
+}
+
+table Material {
+	Name:string;
+	ShaderParams:[Shader];
+	Textures:[Texture];
+	SamplerStates:[SamplerState];
+	FloatUniforms:[FloatUniform];
+	unk6:[uint];
+	unk7:[uint];
+	ColorUniforms:[ColorUniform];
+	unk9:[uint];
+	IntUniforms:[IntUniform];
+	unk11:[uint];
+	unk12:[uint];
+	unk13:[uint];
+	unk14:unk9_table;
+	unk15:int32;
+	RenderLayer:string;
+}
+
+table trmtr {
+	unused0:uint;
+	Materials:[Material];
+}
+
+root_type trmtr;
