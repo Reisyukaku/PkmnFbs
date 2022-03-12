@@ -84,9 +84,9 @@ table Material {
 	RenderLayer:string;
 }
 
-table trmtr {
+table ModelMaterial {
 	unused0:uint;
 	Materials:[Material];
 }
 
-root_type trmtr;
+root_type ModelMaterial;

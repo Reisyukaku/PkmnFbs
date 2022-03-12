@@ -11,9 +11,9 @@ table Polygon {
 	VertBuf:[Verticies];
 }
 
-table Trmbf {
+table MeshBuffer {
 	unused:uint;
 	Polygons:[Polygon];
 }
 
-root_type Trmbf;
+root_type MeshBuffer;

@@ -10,10 +10,10 @@ table Entry {
 	unk4:uint;
 }
 
-table Trmmt {
+table ModelMaterialTable {
 	unk0:uint;
 	unk1:uint;
 	Entries:[Entry];
 }
 
-root_type Trmmt;
+root_type ModelMaterialTable;

@@ -1,22 +1,13 @@
 file_extension "tranm";
 
-enum VectorTrack : byte {
-    NONE = 0,
-    FixedVectorTrack = 1,
-    DynamicVectorTrack = 2,
-    FramedVectorTrack = 3,
-    UnkVectorTrack = 4,
+struct Vec3s {
+    X:ushort;
+    Y:ushort;
+    Z:ushort;
 }
 
-enum QuatTrack : byte {
-    NONE = 0,
-    FixedQuatTrack = 1,
-    DynamicQuatTrack = 2,
-    FramedQuatTrack = 3,
-    UnkQuatTrack = 4,
-}
 
-struct Vec4i {
+struct Vec4s {
     X:ushort;
     Y:ushort;
     Z:ushort;
@@ -29,41 +20,85 @@ struct Vec3f {
     Z:float;
 }
 
-table ScaleV3 {
-    Vec3:Vec3f;
+struct Vec4f {
+    X:float;
+    Y:float;
+    Z:float;
+    W:float;
 }
 
-table RotV3 {
-    Vec3:Vec4i;
+struct Transform {
+    scale:Vec3f;
+    rotate:Vec4f;
+    translate:Vec3f;
 }
 
-table TransV3 {
-    Vec3:Vec3f;
+union VectorTrack { FixedVectorTrack, DynamicVectorTrack, Framed16VectorTrack, Framed8VectorTrack }
+
+table FixedVectorTrack {
+    Vec:Vec3f;
+}
+
+table DynamicVectorTrack {
+    Vec:[Vec3f];
+}
+
+table Framed16VectorTrack {
+    frames:[uint16];
+    Vec:[Vec3f];
+}
+
+table Framed8VectorTrack {
+    frames:[uint8];
+    Vec:[Vec3f];
+}
+
+union QuatTrack { FixedQuatTrack, DynamicQuatTrack, Framed16QuatTrack, Framed8QuatTrack }
+
+table FixedQuatTrack {
+    Vec:Vec3s;
+}
+
+table DynamicQuatTrack {
+    Vec:[Vec3s];
+}
+
+table Framed16QuatTrack {
+    frames:[uint16];
+    Vec:[Vec3s];
+}
+
+table Framed8QuatTrack {
+    frames:[uint8];
+    Vec:[Vec3s];
 }
 
 table Bone {
     Name:string;
-    ScaleType:VectorTrack;
-    Scale:ScaleV3;
-    RotType:QuatTrack;
-    Rotation:RotV3;
-    TransType:VectorTrack;
-    translation:TransV3;
+    Scale:VectorTrack;
+    Rot:QuatTrack;
+    Trans:VectorTrack;
+}
+
+table BoneInit {
+    IsInit:uint32;
+    transform:Transform; 
 }
 
 table SkelAnim {
     Bones:[Bone];
+    InitData:[BoneInit];
 }
 
 table Metadata {
-    unk1:uint;
+    Loops:uint;
     Keyframes:uint;
     FPS:uint;
 }
 
-table TranM {
+table Animation {
     Meta:Metadata;
     Anim:SkelAnim;
 }
 
-root_type TranM;
+root_type Animation;

@@ -93,10 +93,10 @@ table MeshShape {
     mesh_name: string;
 }
 
-table Mesh {
+table ModelMesh {
     unk0: uint32;
     meshes:[MeshShape];
     buffer_name:string;
 }
 
-root_type Mesh;
+root_type ModelMesh;
