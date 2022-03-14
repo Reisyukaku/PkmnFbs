@@ -1,0 +1,28 @@
+file_extension "trsha";
+
+table Property {
+    Name:string;
+    Value:byte;
+}
+
+table Param {
+    Name:string;
+    properties:[Property];
+    unk2:uint;
+    unk3:uint;
+    unk4:uint;
+    unk5:uint;
+    unk6:uint;
+}
+
+table Shader {
+    Name:string;
+    File:string;
+    someParams:[Param];
+    someParams2:[Param];
+    unk2:[uint];
+    unk3:bool;
+    unk4:bool;
+}
+
+root_type Shader;

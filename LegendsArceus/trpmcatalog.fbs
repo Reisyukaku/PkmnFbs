@@ -1,0 +1,28 @@
+file_extension "trpmcatalog";
+
+table FileEntry {
+    Name:string;
+    File:string;
+}
+
+table Metadata {
+    Species:ushort;
+    Form:ushort;
+}
+
+table CatalogEntry {
+    Meta:Metadata;
+    ModelFile:string;
+    MaterialFile:string;
+    ConfigFile:string;
+    unk2:uint;
+    AnimChannels:[FileEntry];
+    Skeletons:[FileEntry];
+}
+
+table PkmnCatalog {
+    unk:uint;
+    Catalog:[CatalogEntry];
+}
+
+root_type PkmnCatalog;

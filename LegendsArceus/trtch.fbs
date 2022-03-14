@@ -1,0 +1,14 @@
+file_extension "trtch";
+
+table Entry {
+    str1:string;
+    str2:string;
+    str3:string;
+}
+
+table Techniques {
+    unk:uint;
+    entries:[Entry];
+}
+
+root_type Techniques;

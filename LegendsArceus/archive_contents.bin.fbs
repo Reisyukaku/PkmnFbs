@@ -1,0 +1,17 @@
+file_extension "bin";
+
+struct HashStruct {
+    Hash:uint64;
+    Unk1:uint;
+}
+
+table Directory {
+    FileHash:HashStruct;
+    ContentHashes:[uint64];
+}
+
+table ArchiveContents {
+    Archive:[Directory];
+}
+
+root_type ArchiveContents;

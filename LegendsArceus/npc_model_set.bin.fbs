@@ -1,0 +1,52 @@
+file_extension "bin";
+
+table Animations {
+    folder_path:[string];
+    animation_path:[string];
+}
+
+table Meshes {
+    folder_path:[string];
+    mesh_path:[string];
+    mesh_flags:[string]; //Can hide certain meshes like "hide_a_mesh"
+}
+
+table Rigs {
+    rigs:[string];
+}
+
+table PartConfig {
+    slots:[string];
+    slot_1:[uint32];
+    slot_2:[uint32];
+    slot_3:[uint32];
+    slot_4:[uint32];
+    slot_5:[uint32];
+    slot_6:[uint32];
+    slot_7:[uint32];
+    slot_8:[uint32];
+    slot_9:[uint32];
+}
+
+table Set {
+    unk_set_0:uint64;
+    npc_id:string;
+    unk_set_2:uint64;
+    anims:Animations;
+    meshes:Meshes;
+    rigs:Rigs;
+    attachment_0:string;
+    attachment_1:string;
+    attachment_2:string;
+    parts:PartConfig;
+    value_list_id:string;
+    unk_set_11:[uint32];
+    archive_path:string;
+    unk_float:float;
+}
+
+table NPCModelSet {
+    sets:[Set];
+}
+
+root_type NPCModelSet;
