@@ -1,0 +1,53 @@
+file_extension "evobin";
+
+enum Methods : ushort {
+    None = 0,
+    LevelHappy = 1,
+    LevelHappyDay = 2,
+    LevelHappyNight = 3,
+    Level = 4,
+    LinkingCord = 5,
+    UseItem = 8,
+    PersonalityLow = 12,
+    PersonalityHigh = 13,
+    DawnStoneMale = 17,
+    DawnStoneFemale = 18,
+    LevelWithMove = 21,
+    LevelWithPkmnInParty = 22,
+    LevelMale = 23,
+    LevelFemale = 24,
+    ThunderStone = 25,
+    LeafStone = 26,
+    IceStone = 27,
+    LoveFairy = 29,
+    LevelInRain = 31,
+    LevelDayHoldItem = 48,
+    LevelNightHoldItem = 49,
+    UseItemFullMoon = 50,
+    UseAgilStyle = 51,
+    StrongStyleDmg = 52,
+    DamageRecoil = 53
+}
+
+struct Meta {
+    ID:ubyte;
+    u2:ubyte;
+}
+
+table Evo{
+    Method:Methods;
+    MethodMeta:Meta;
+    Species:ushort;
+}
+
+table Entry {
+    Species:ushort;
+    Form:ushort;
+    Evolution:[Evo];
+}
+
+table EvolutionData {
+    Entries:[Entry];
+}
+
+root_type EvolutionData;
