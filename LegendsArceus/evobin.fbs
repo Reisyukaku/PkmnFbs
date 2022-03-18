@@ -29,15 +29,12 @@ enum Methods : ushort {
     DamageRecoil = 53
 }
 
-struct Meta {
-    ID:ubyte;
-    u2:ubyte;
-}
-
 table Evo{
     Method:Methods;
-    MethodMeta:Meta;
+    Argument:ushort;
     Species:ushort;
+    Form:byte;
+    Level:byte;
 }
 
 table Entry {
