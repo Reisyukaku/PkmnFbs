@@ -33,8 +33,8 @@ table Evo{
     Method:Methods;
     Argument:ushort;
     Species:ushort;
-    Form:byte;
-    Level:byte;
+    Form:ushort;
+    Level:ushort;
 }
 
 table Entry {

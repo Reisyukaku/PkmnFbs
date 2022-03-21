@@ -1,0 +1,95 @@
+file_extension "bin";
+
+enum PokeNature : int {
+    Random = -1,
+
+    Hardy,
+    Lonely,
+    Brave,
+    Adamant,
+    Naughty,
+    Bold,
+
+    Docile,
+    Relaxed,
+    Impish,
+    Lax,
+    Timid,
+    Hasty,
+
+    Serious,
+    Jolly,
+    Naive,
+    Modest,
+    Mild,
+    Quiet,
+
+    Bashful,
+    Rash,
+    Calm,
+    Gentle,
+    Sassy,
+    Careful,
+
+    Quirky,
+}
+
+table PokeMove {
+    Move:uint;
+    Mastered:bool;
+}
+
+table Pokemon {
+    Species:uint;
+    Form:uint;
+    Move1:PokeMove;
+    Move2:PokeMove;
+    Move3:PokeMove;
+    Move4:PokeMove;
+    Level:uint;
+    Nature:PokeNature;
+    Gender:uint;
+    GV_HP:uint;
+    GV_ATK:uint;
+    GV_DEF:uint;
+    GV_SPE:uint;
+    GV_SPA:uint;
+    GV_SPD:uint;
+    Shiny:bool;
+    IsOybn:bool;
+}
+
+table Vec4f {
+    X:float;
+    Y:float;
+    Z:float;
+    W:float;
+}
+
+table TrData {
+    Hash0:uint64;
+    Hash1:uint64;
+    Hash2:uint64;
+    Music:string;
+    Unk0:string;
+    Unk1:string;
+    Unk2:string;
+    Hash3:uint64;
+    Hash4:uint64;
+    UnkVec:Vec4f;
+    Unk3:uint;
+    Unk4:uint;
+    Unk5:uint;
+    Unk6:byte;
+    Unk7:byte;
+    Unk8:byte;
+    Unk9:byte;
+    Unk10:byte;
+    Unk11:byte;
+    Unk12:byte;
+    Unk13:byte;
+    Unk14:byte;
+    Team:[Pokemon];
+}
+
+root_type TrData;
