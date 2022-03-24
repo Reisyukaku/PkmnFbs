@@ -13,8 +13,8 @@ table Pos {
 table Entry { 
     AltForm:uint;
     Species:uint;
-    unk:int (deprecated);
-    Position:Pos (original_order);
+    unk:uint;
+    Position:Pos;
 }
 
 table Recovery {

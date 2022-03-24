@@ -1,21 +1,10 @@
-namespace SwSh;
-
-table meshEntry {
-  isEnabled:uint8;
-  meshName:string;
-}
-
-table meshEntries {
-  entry:[meshEntry];
-}
-
 table meshTable {
-  undef_0:uint32;
-  Table:[meshEntries];
+    unk:uint;
+    unk1:uint;
 }
 
 table materialEntry {
-  materialName:string;
+    Name:string;
 }
 
 table gfbpokecfg {
@@ -23,8 +12,8 @@ table gfbpokecfg {
   minorVer:uint;
   SpeciesID:uint16;
   FormID:uint16;
-  unk_4:[uint]];
-  unk_5:[uint]];
+  unk_4:[uint];
+  unk_5:[uint];
   unk_6:uint8;
   unk_7:uint8;
   height:float;
@@ -42,11 +31,12 @@ table gfbpokecfg {
   inframe_center_y_offset:float;
   inframe_left_rotation:float;
   inframe_right_rotation:float;
+  //unk8:float;
   RegionID:uint16;
-  wait_motion_b_rate:float;
-  wait_motion_c_rate:float;
-  undef_26:uint32;
-  undef_27:uint32;
+  unk9:byte;
+  unk10:uint;
+  undef_26:uint;
+  undef_27:uint;
   MaterialEntries:[materialEntry];
   MeshTable:meshTable;
 }
